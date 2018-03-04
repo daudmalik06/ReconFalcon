@@ -5,11 +5,8 @@
 
 
 ## Introduction
-A small Php application to fetch archive url snapshots from archive.org.  
-using it you can fetch complete list of snapshot urls of any year or 
-complete list of all years possible.  
+A small Php application to scan list of urls for live and non reachable urls.
 Made Specially for penetration testing purpose.  
-**This application is powered by [WMB-Scrapper](https://github.com/daudmalik06/WMB-Scrapper)**
 
 
 
