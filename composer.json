@@ -1,0 +1,17 @@
+{
+    "autoload": {
+        "psr-4": {
+            "dawood\\ReconFalcon\\": "src/"
+        },
+        "files": [
+            "src/helper.php"
+        ]
+    },
+    "require": {
+        "krakjoe/pthreads-polyfill": "^1.1"
+    },
+    "require-dev": {
+        "kevinlebrun/colors.php": "^1.0",
+        "symfony/console": "^3.4"
+    }
+}

@@ -1,0 +1,23 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: dawood ikhlaq
+ * Date: 3/04/2018
+ * Time: 4:38 PM
+ */
+
+
+require __DIR__.'/vendor/autoload.php';
+
+use dawood\ReconFalcon\Commands\ReconFalcon;
+
+use Symfony\Component\Console\Application;
+
+$application = new Application();
+$scrapper = new ReconFalcon;
+
+$application->add($scrapper);
+
+$application->setDefaultCommand('recon');
+
+$application->run();
