@@ -55,12 +55,14 @@ class ReconFalcon extends Command
             $threadsAvailable=1;
         }
 
+        $urls = file($file, FILE_IGNORE_NEW_LINES);
+
         $output->writeln('<info>Processing All Provided Urls</info>');
         $output->writeln('<comment>Using Threads:' . $threadsAvailable . '</comment>');
+        $output->writeln('<comment>Loaded Urls:' . count($urls). '</comment>');
+        $output->writeln('<info>Results will be saved in '.rootDirectory().DIRECTORY_SEPARATOR.'Output'.DIRECTORY_SEPARATOR.$outputFile.'</info>');
 
-        $output->writeln('<info>Results will be saved in :'.rootDirectory().DIRECTORY_SEPARATOR.'Output'.DIRECTORY_SEPARATOR.$outputFile.'</info>');
-
-        $urls = file($file, FILE_IGNORE_NEW_LINES);
+        echo PHP_EOL;
 
         $collector = function (FalconClient $task) use($output, $verbose, $outputFile){
             if($task->isDone())
@@ -73,6 +75,7 @@ class ReconFalcon extends Command
         };
 
         $pool = new Pool($threads);
+
         foreach ($urls as $url) {
             $url = trim($url);
             if(!strstr('http',$url))
@@ -80,10 +83,14 @@ class ReconFalcon extends Command
                 $url = 'http://'.$url;
             }
             $pool->submit(new FalconClient($url, $timeOut, true));
+            if(!extension_loaded('pthreads'))
+            {
+                $pool->collect($collector);
+            }
         }
 
         while ($pool->collect($collector));
-
+        
         $pool->shutdown();
         $output->writeln('<comment>Done Working</comment>');
     }

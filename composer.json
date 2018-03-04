@@ -8,10 +8,7 @@
         ]
     },
     "require": {
-        "krakjoe/pthreads-polyfill": "^1.1"
-    },
-    "require-dev": {
-        "kevinlebrun/colors.php": "^1.0",
+        "krakjoe/pthreads-polyfill": "^1.1",
         "symfony/console": "^3.4"
     }
 }

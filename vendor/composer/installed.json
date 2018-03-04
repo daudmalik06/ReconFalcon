@@ -1,55 +1,50 @@
 [
     {
-        "name": "kevinlebrun/colors.php",
-        "version": "1.0.2",
-        "version_normalized": "1.0.2.0",
+        "name": "krakjoe/pthreads-polyfill",
+        "version": "v1.1.0",
+        "version_normalized": "1.1.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/kevinlebrun/colors.php.git",
-            "reference": "6d7140aeedef46c97c2324f09b752c599ef17dac"
+            "url": "https://github.com/krakjoe/pthreads-polyfill.git",
+            "reference": "e0b6b34aca142dda943bf8ade046285fd2000c35"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/kevinlebrun/colors.php/zipball/6d7140aeedef46c97c2324f09b752c599ef17dac",
-            "reference": "6d7140aeedef46c97c2324f09b752c599ef17dac",
+            "url": "https://api.github.com/repos/krakjoe/pthreads-polyfill/zipball/e0b6b34aca142dda943bf8ade046285fd2000c35",
+            "reference": "e0b6b34aca142dda943bf8ade046285fd2000c35",
             "shasum": ""
         },
-        "require": {
-            "php": ">=5.3.0"
-        },
         "require-dev": {
-            "phpunit/phpunit": "3.7.*",
-            "satooshi/php-coveralls": "1.0.*",
-            "squizlabs/php_codesniffer": "1.*"
+            "phpunit/phpunit": "^5"
         },
-        "time": "2016-04-12T20:58:34+00:00",
+        "time": "2015-11-16T08:24:31+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
-            "psr-0": {
-                "Colors": "src/"
-            }
+            "files": [
+                "src/Collectable.php",
+                "src/Threaded.php",
+                "src/Volatile.php",
+                "src/Thread.php",
+                "src/Worker.php",
+                "src/Pool.php"
+            ]
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
-            "MIT"
+            "PHP"
         ],
         "authors": [
             {
-                "name": "Kevin Le Brun",
-                "email": "lebrun.k@gmail.com",
-                "homepage": "http://kevinlebrun.fr",
-                "role": "developer"
+                "name": "Joe Watkins",
+                "email": "krakjoe@php.net"
             }
         ],
-        "description": "Colors for PHP CLI scripts",
-        "homepage": "https://github.com/kevinlebrun/colors.php",
+        "description": "A polyfill for pthreads",
+        "homepage": "http://pthreads.org/",
         "keywords": [
-            "cli",
-            "color",
-            "colors",
-            "console",
-            "shell"
+            "polyfill",
+            "pthreads"
         ]
     },
     {
@@ -290,53 +285,5 @@
         ],
         "description": "Symfony Console Component",
         "homepage": "https://symfony.com"
-    },
-    {
-        "name": "krakjoe/pthreads-polyfill",
-        "version": "v1.1.0",
-        "version_normalized": "1.1.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/krakjoe/pthreads-polyfill.git",
-            "reference": "e0b6b34aca142dda943bf8ade046285fd2000c35"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/krakjoe/pthreads-polyfill/zipball/e0b6b34aca142dda943bf8ade046285fd2000c35",
-            "reference": "e0b6b34aca142dda943bf8ade046285fd2000c35",
-            "shasum": ""
-        },
-        "require-dev": {
-            "phpunit/phpunit": "^5"
-        },
-        "time": "2015-11-16T08:24:31+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "files": [
-                "src/Collectable.php",
-                "src/Threaded.php",
-                "src/Volatile.php",
-                "src/Thread.php",
-                "src/Worker.php",
-                "src/Pool.php"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "PHP"
-        ],
-        "authors": [
-            {
-                "name": "Joe Watkins",
-                "email": "krakjoe@php.net"
-            }
-        ],
-        "description": "A polyfill for pthreads",
-        "homepage": "http://pthreads.org/",
-        "keywords": [
-            "polyfill",
-            "pthreads"
-        ]
     }
 ]
