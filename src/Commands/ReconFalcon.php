@@ -55,6 +55,11 @@ class ReconFalcon extends Command
             $threadsAvailable=1;
         }
 
+        if(!file_exists($file))
+        {
+            $output->writeln("<error>Wrong Input File Provided</error>");
+        }
+
         $urls = file($file, FILE_IGNORE_NEW_LINES);
 
         $output->writeln('<info>Processing All Provided Urls</info>');
@@ -90,7 +95,7 @@ class ReconFalcon extends Command
         }
 
         while ($pool->collect($collector));
-        
+
         $pool->shutdown();
         $output->writeln('<comment>Done Working</comment>');
     }
